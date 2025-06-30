@@ -1,30 +1,15 @@
-import React from 'react'
-import Header from './components/Header/Header'
-import Hero from './components/Hero/Hero'
-import RegistrationForm from './components/RegistrationForm/RegistrationForm'
-import Slider from './components/Slider/Slider'
-import { SliderProvider } from './components/Slider/SliderContext'
+import { Routes, Route } from 'react-router-dom'
+import HomePage from './components/HomePage/HomePage'
+import RegisterPage from './components/RegisterPage/RegisterPage'
 import './App.css'
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Hero />
-      <section id="registration" className="section">
-        <div className="container">
-          <h2>Регистрация</h2>
-          <RegistrationForm />
-        </div>
-      </section>
-      <section id="gallery" className="section">
-        <div className="container">
-          <h2>Галерея</h2>
-          <SliderProvider>
-            <Slider />
-          </SliderProvider>
-        </div>
-      </section>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/register" element={<RegisterPage />} />
+      </Routes>
     </div>
   )
 }
